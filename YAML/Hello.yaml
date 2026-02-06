@@ -1,0 +1,69 @@
+#YAML Key-Value Pair
+name: DevOps
+duration: 48
+level: beginner
+
+# key: value format
+# Space after colon is mandatory
+---
+
+# YAML Data Types
+string: "hello"
+number: 10
+float: 3.14
+boolean: true
+null_value: null
+# YAML automatically detects data types
+---
+# YAML Lists (Arrays)
+# Block Style (Dash-Style)
+tools:
+  - Git
+  - Docker
+  - Kubernetes
+  - Jenkins
+# Dash (-) represents list items
+# Flow Style (Inline Arrays)
+# Web server configurations inline
+web_servers: [web01.example.com, web02.example.com, web03.example.com]
+#This style saves space but can reduce readability for longer lists.
+---
+
+#YAML Dictionary (Map/Object)
+student:
+  name: Rahim
+  program: MSc
+  subject: DevOps
+---
+# Nested Structures
+course:
+  name: DevOps
+  duration: 48
+  tools:
+    - Git
+    - Docker
+    - Kubernetes
+
+# List of Mappings (Objects)
+environments:
+  - name: production
+    servers:
+      - prod-web01
+      - prod-db01
+  - name: staging
+    servers:
+      - stage-web01
+      - stage-db01
+---
+
+# YAML Multiline Strings
+description: |
+  This is a DevOps course.
+  It is lab based.
+  Duration is 48 hours.
+
+# | preserves line breaks
+# Used for scripts & configs
+...
+
+# REF: https://yaml.org/spec/1.2.2/
