@@ -6,11 +6,22 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #GitHub provides a Linux VM & Executes your workflow, This is free for public repo
 
+  # uses → prebuilt action
+  # Downloads repository code into runner
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Run script
         run: echo "Hello DevOps"
+
+#Explain Workflow Structure
+#  Workflow (Map)
+#  ├── name
+#  ├── on
+#  └── jobs (Map)
+#    └── build (Job)
+#        ├── runs-on
+#        └── steps (List)
