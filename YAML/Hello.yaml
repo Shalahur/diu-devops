@@ -23,6 +23,7 @@ tools:
   - Kubernetes
   - Jenkins
 # Dash (-) represents list items
+
 # Flow Style (Inline Arrays)
 # Web server configurations inline
 web_servers: [web01.example.com, web02.example.com, web03.example.com]
