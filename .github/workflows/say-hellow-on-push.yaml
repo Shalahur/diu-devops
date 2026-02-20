@@ -2,7 +2,7 @@ name: Say Hellow
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main1" ]
 
 jobs:
   build:

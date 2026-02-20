@@ -1,0 +1,44 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: DockerFile
+      args:
+        JAR_FILE: backend.jar
+    image: shalahur/backend:${VERSION:-latest}
+    ports:
+      - 8083:8080
+    networks:
+      - servicenet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          memory: 600M
+        reservations:
+          memory: 200M
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: DockerFile
+      args:
+        JAR_FILE: frontend.jar
+    image: shalahur/frontend:${VERSION:-latest}
+    ports:
+      - 8084:8080
+    networks:
+      - servicenet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          memory: 600M
+        reservations:
+          memory: 200M
+
+networks:
+  servicenet:
+
