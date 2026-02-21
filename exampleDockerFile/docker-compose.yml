@@ -2,7 +2,7 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: DockerFile
+      dockerfile: Dockerfile
       args:
         JAR_FILE: backend.jar
     image: shalahur/backend:${VERSION:-latest}
@@ -22,7 +22,7 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: DockerFile
+      dockerfile: Dockerfile
       args:
         JAR_FILE: frontend.jar
     image: shalahur/frontend:${VERSION:-latest}
